@@ -1,0 +1,16 @@
+<!--pages/eval/eval.wxml-->
+<text bindtap="uploadInfo">选择图片并上传</text>
+
+<!--
+<button class="userinfo-nickname" >
+  <navigator url="../a-show/show" open-type="navigate" class="uploader-text">围观</navigator>
+</button>
+-->
+
+<text>用户头像和昵称</text>
+<open-data type="userAvatarUrl"></open-data>
+<open-data type="userNickName"></open-data>
+
+
+
+<text bindtap="downLoad">下载图片</text>

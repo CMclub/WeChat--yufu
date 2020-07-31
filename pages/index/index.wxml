@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container">
+<swiper class='img_swiper' indicator-dots='true' autoplay='true' interval='4000' duration='1000' circular='true'>
+  <block wx:for="{{switer_icons}}" wx:for-index="index">
+    <swiper-item>
+      <image src='{{item.url}}' class='img-item' mode='aspectFill'></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view>
+<text>
+介绍
+</text>
+<textarea>
+青花瓷是用含氧化钴的钴矿为原料，在陶瓷坯体上描绘纹饰，再罩上一层透明釉，经高温还原焰一次烧成。钴料烧成后呈蓝色，具有着色力强、发色鲜艳、烧成率高、呈色稳定的特点。原始青花瓷于唐宋已见端倪，成熟的青花瓷则出现在元代景德镇的湖田窑。明代青花成为瓷器的主流。
+</textarea>
+</view>
+   
+</view>
