@@ -15,9 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapi.views import user, submit
-
+from django.conf.urls import url
+from myapi.views import user, submit, download, mycookie, detail, show, show_detail, sort
+from django.views.static import serve
+from django.conf import settings
 urlpatterns = [
     path('api/user/', user),
     path('api/submit/', submit),
+    path('api/download/', download),
+    path('api/eval/', mycookie),
+    path('api/detail/', detail),
+    path('api/show/', show),
+    path('api/show_detail/', show_detail),
+    path('api/sort/', sort),
+    url(r'api/image/(?P<path>.*)',serve,{'document_root':settings.MEDIA_ROOT}),
 ]
