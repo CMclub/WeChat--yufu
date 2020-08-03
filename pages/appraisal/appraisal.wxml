@@ -1,0 +1,49 @@
+<!--pages/appraisal/appraisal.wxml-->
+
+<!--<input confirm-type="done" placeholder="类别" bindblur="inputKind"></input>-->
+<!--<input confirm-type="done" placeholder="专家" bindblur="inputExpert"></input>-->
+<!--<input confirm-type="done" placeholder="说明" bindblur="inputText"></input>-->
+
+<select prop-array='{{selectArrayType}}' bind:done='getKind' nowText="类别"></select>
+<select prop-array='{{selectArrayExpert}}' bind:done='getExpert' nowText="专家"></select>
+
+<text class="title">藏品图片</text>
+<view class="img-view">
+    <image class="add-img" src="../../images/select-img/add.png" bindtap="chooseImages"></image>
+</view>
+
+<!-- here !!! -->
+<view class='ui_uploader_cell'>
+    <!-- 根据已选择的图片临时路径数组展示图片-->
+    <view class='ui_uploader_item' wx:for="{{uploaderList}}" wx:key="{{index}}">
+        <!-- 删除-->
+        <icon class='ui_uploader_item_icon' bindtap='clearImg' data-index="{{index}}" type="clear" size="20" color="red"/>
+        <!-- 图片-->
+        <image bindtap='showImg' data-index="{{index}}" src='{{item}}'></image>
+    </view>
+    <view class='ui_uploader' bindtap='upload' wx:if="{{showUpload}}"></view>
+</view>
+
+
+<view class="description">
+    <text class="title">藏品描述</text>
+    <textarea class="context" maxlength="200" bindinput="countText" bindblur="getText">
+    <text class="limitNum">{{limitNum|0}}/200</text>
+    </textarea>
+</view>
+
+<button bindtap="check">提交</button>
+
+<!--<button  class="sub-btn" bindtap="uploadInfo" >上传图片和信息</button>-->
+<!--<button bindtap="downLoad">下载</button>-->
+
+<!--<button bindtap="queryAll">展示全部</button>-->
+
+<!--<button bindtap="detail">鉴定详情</button>-->
+
+<!--<button bindtap="show">围观</button>-->
+
+<!--<button bindtap="show_detail">围观详情</button>-->
+
+<!--<button bindtap="queryClass">获取专家和类别</button>-->
+

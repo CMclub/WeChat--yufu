@@ -1,0 +1,7 @@
+<!--pages/mine/appraisal.wxml-->
+<view class="container">
+    <view class="userinfo">
+        <open-data class="userinfo-avatar" type="userAvatarUrl"></open-data>
+        <open-data class="userinfo-nickname" type="userNickName" lang="zh_CN"></open-data>
+    </view>
+</view>

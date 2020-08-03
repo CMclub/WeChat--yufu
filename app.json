@@ -1,24 +1,34 @@
 {
   "pages": [
-    
+    "pages/temp/temp",
     "pages/index/index",
-    "pages/a-eval/eval"
+    "pages/appraisal/appraisal",
+    "pages/onlooker/onlooker",
+    "pages/mine/mine",
+    "pages/backup/backup"
+
   ],
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "list": [
-        {
-            "text": "鉴宝",
-            "pagePath": "pages/a-eval/eval"
-        },
-        {
-            "text": "围观",
-            "pagePath": "pages/index/index"
-        },
-        {
-            "text": "我的",
-            "pagePath": "pages/index/index"
-        }
+      {
+        "text": "鉴宝",
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tabBar-img/appraisal.png",
+        "selectedIconPath": "images/tabBar-img/appraisal_.png"
+      },
+      {
+        "text": "围观",
+        "pagePath": "pages/onlooker/onlooker",
+        "iconPath": "images/tabBar-img/onlooker.png",
+        "selectedIconPath": "images/tabBar-img/onlooker_.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/tabBar-img/mine.png",
+        "selectedIconPath": "images/tabBar-img/mine_.png"
+      }
     ]
-}
+  }
 }
