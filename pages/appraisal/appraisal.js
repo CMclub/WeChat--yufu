@@ -8,15 +8,17 @@ Page({
      * 页面的初始数据
      */
     data: {
-            kind: '',
-            expert: '',
-            text: '',
-            tempfilePaths: '',
-            tempfiles: '',
-            id: 0,
-            userInput:'',
+        eval:[
+            {kind: ''},
+            {expert: ''},
+            {text: ''},
+            {id: 0},
+            {userInput:''},
+            {input_max:200},
+        ],
 
-            input_max:200,
+            uploaderList:[],
+            uploaderNum:0,
             showUpload:true,
 
 
@@ -57,8 +59,8 @@ Page({
 
     getKind(e) {
         let _this = this
-        _this.data.kind = e.detail
-        console.log('类别： ' + _this.data.kind)
+        _this.data.eval.kind = e.detail
+        console.log('类别： ' + _this.data.eval.kind)
     },
 
     getExpert(e) {
@@ -86,29 +88,82 @@ Page({
         console.log('text:  '+this.data.text)
     },
 
-    chooseImages() {
-        let this1 = this
-        wx.chooseImage({
-            count: 9,
-            sizeType: ['original'],
-            success(res) {
-                this1.data.tempfilePaths = res.tempFilePaths
-                this1.data.tempfiles = res.tempFiles
-                var tt = this1.data.tempfiles
-                console.log('filepaths:  '+this1.data.tempfilePaths)
-                console.log('files:  '+tt)
+    // chooseImages() {
+    //     let this1 = this
+    //     wx.chooseImage({
+    //         count: 9,
+    //         sizeType: ['original'],
+    //         success(res) {
+    //             this1.data.tempfilePaths = res.tempFilePaths
+    //             this1.data.tempfiles = res.tempFiles
+    //             var tt = this1.data.tempfiles
+    //             console.log('filepaths:  '+this1.data.tempfilePaths)
+    //             console.log('files:  '+tt)
 
-                wx.previewImage({
-                  urls: this1.data.tempfilePaths,
+    //             wx.previewImage({
+    //               urls: this1.data.tempfilePaths,
+    //             })
+    //         }
+    //     })
+    // },
+
+
+    //删除图片
+    clearImg:function(e){
+        var nowList = [];//新数据
+        var uploaderList = this.data.uploaderList;//原数据
+        for (let i = 0; i < uploaderList.length;i++){
+            if (i == e.currentTarget.dataset.index){
+                continue;
+            }else{
+                nowList.push(uploaderList[i])
+            }
+        }
+        this.setData({
+            uploaderNum: this.data.uploaderNum - 1,
+            uploaderList: nowList,
+            showUpload: true
+        })
+    },
+    //展示图片
+    showImg:function(e){
+        var that=this;
+        wx.previewImage({
+            urls: that.data.uploaderList,
+            current: that.data.uploaderList[e.currentTarget.dataset.index]
+        })
+    },
+    //上传图片
+    addImg: function(e) {
+        var that = this;
+        wx.chooseImage({
+            count: 9 - that.data.uploaderNum, // 默认9
+            sizeType: ['original'],
+            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+            success: function(res) {
+                console.log(res)
+                // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+                let tempFilePaths = res.tempFilePaths;
+                let uploaderList = that.data.uploaderList.concat(tempFilePaths);
+                if (uploaderList.length==9){
+                    that.setData({
+                        showUpload:false
+                    })
+                }
+                that.setData({
+                    uploaderList: uploaderList,
+                    uploaderNum: uploaderList.length,
                 })
+                console.log(uploaderList)
+                console.log(e.currentTarget.dataset.index)
             }
         })
     },
 
+
     check(){
         let _this = this
-        var tt =  _this.data.tempfiles
-        if(_this.data.kind != '' && _this.data.expert != '' && _this.data.text != '' && _this.data.tempfilePaths != '' && tt !='' )
+        if(_this.data.kind != '' && _this.data.expert != '' && _this.data.text != '' && _this.data.uploaderList != '')
         {
             console.log('ok')
             //uploadInfo
@@ -139,15 +194,15 @@ Page({
         _this.data.id = idd
 
 
-        var tempfilePaths = _this.data.tempfilePaths
+        var tempfilePaths = _this.data.uploaderList
         var i = 0
-        for (i; i < _this.data.tempfiles.length; i++) {
+        for (i; i < _this.data.uploaderList.length; i++) {
             console.log('&&&&&&&&&   ' + i)
             //获取文件后缀名 - exten
-            var file = _this.data.tempfiles[i]
-            var path = file.path
-            var exten = path.split('.');
+            var exten = uploaderList[0].split('.');
             exten = exten[exten.length - 1]
+
+            console.log(tempfilePaths[i])
 
             wx.showLoading({
                 title: '加载中',

@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/temp/temp",
+    
     "pages/index/index",
     "pages/appraisal/appraisal",
     "pages/onlooker/onlooker",
     "pages/mine/mine",
-    "pages/backup/backup"
-
+    "pages/backup/backup",
+    "pages/temp/temp"
   ],
   "sitemapLocation": "sitemap.json",
   "tabBar": {

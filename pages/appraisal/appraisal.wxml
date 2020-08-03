@@ -8,9 +8,7 @@
 <select prop-array='{{selectArrayExpert}}' bind:done='getExpert' nowText="专家"></select>
 
 <text class="title">藏品图片</text>
-<view class="img-view">
-    <image class="add-img" src="../../images/select-img/add.png" bindtap="chooseImages"></image>
-</view>
+
 
 <!-- here !!! -->
 <view class='ui_uploader_cell'>
@@ -21,7 +19,7 @@
         <!-- 图片-->
         <image bindtap='showImg' data-index="{{index}}" src='{{item}}'></image>
     </view>
-    <view class='ui_uploader' bindtap='upload' wx:if="{{showUpload}}"></view>
+    <image class="add-img" src="../../images/select-img/add.png" bindtap='addImg' wx:if="{{showUpload}}" data-index="{{index}}"></image>
 </view>
 
 

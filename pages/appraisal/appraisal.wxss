@@ -15,8 +15,8 @@ page {
 
 .add-img{
     padding-top: 1%;
-    width: 100rpx;
-    height: 100rpx;
+    width: 165rpx;
+    height: 165rpx;
     position: center;
 }
 .context{
