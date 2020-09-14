@@ -1,7 +1,7 @@
 {
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
@@ -27,7 +27,7 @@
 		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
-	"appid": "wx0004bf31e26aab79",
+	"appid": "wxe31d98bd0d011a14",
 	"projectname": "yufu",
 	"libVersion": "2.12.0",
 	"simulatorType": "wechat",
@@ -48,13 +48,25 @@
 		"game": {
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
 			"current": 0,
 			"list": [
 				{
 					"id": -1,
 					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide"
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": 1047
 				}
 			]
 		}

@@ -1,13 +1,22 @@
 {
   "pages": [
-    
     "pages/index/index",
+    "components/indexBar/indexBar",
     "pages/appraisal/appraisal",
-    "pages/onlooker/onlooker",
     "pages/mine/mine",
-    "pages/backup/backup",
-    "pages/temp/temp"
+    "pages/backManage/backManage",
+    "pages/newCome/newCome",
+    "pages/record/record",
+    "pages/personalInfo/personalInfo",
+    "pages/apprInfo/apprInfo",
+    "pages/about/about",
+    "pages/service/service",
+    "pages/onlooker/onlooker",
+    "pages/backEval/backEval",
+    "pages/onlookerInfo/onlookerInfo"
   ],
+  "enablePullDownRefresh": true,
+  "withShareTicket":true,
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "list": [
