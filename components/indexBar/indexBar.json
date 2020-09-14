@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "popup": "..//popup/popup",
+    "tabBar": "../tabBar/tabBar"
+  },
+  "navigationBarTitleText": "免费鉴定"
+}

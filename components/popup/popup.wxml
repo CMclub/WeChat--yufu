@@ -1,0 +1,11 @@
+
+<view hidden="{{!is_read}}" class='container' style=''>
+    <view class='wrap {{wrapAnimate}}' style='background:rgba(0,0,0,{{bgOpacity}});'></view>
+    <view class='popup-container {{popupAnimate}}'>
+        <view class="wx-popup-title">{{title}}</view>
+        <text class="wx-popup-con" disabled='true'  style="overflow-y:auto;overflow-x:scroll;" selectable="true">{{content}}</text>
+        <view class="wx-popup-btn">
+            <text class="btn-ok" bindtap='_ok'>{{btn_ok}}</text>
+        </view>
+    </view>
+</view>

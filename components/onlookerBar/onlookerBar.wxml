@@ -1,0 +1,6 @@
+<scroll-view class="container" >  
+    <view class="items" wx:for="{{infoList}}" wx:key="" data-item="{{item}}" bindtap="toInfo">
+        <image class="img-item" src="{{item.url}}" bindload="imageLoad" lazy-load bindload='onLazyLoad'></image>
+        <view class="footer">{{item.eval_name}}</view>
+    </view>
+</scroll-view>

@@ -5,6 +5,11 @@
         <image src='../../images/select-img/down_arrow.png'  class='com-sImg'  animation="{{animationData}}"></image>
     </view>
     <view class='com-sList' wx:if="{{selectShow}}">
-        <view wx:for="{{propArray}}" data-index="{{index}}" wx:key='' class='com-sItem' bindtap='setText'>{{item.text}}</view>
+        <view wx:for="{{propArray}}" data-index="{{index}}" wx:key='' class='com-sItem' bindtap='setText'>{{item.kind===undefined?item:item.kind}}</view>
+
     </view>
+
+    <!-- <view class='com-sList' wx:if="{{selectShow}}">
+        <view wx:for="{{propArray}}" data-index="{{index}}" wx:key='' class='com-sItem' bindtap='setText'>{{item}}</view>
+    </view> -->
 </view>

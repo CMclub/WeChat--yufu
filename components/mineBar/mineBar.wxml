@@ -1,0 +1,65 @@
+<view class="container">
+
+     
+
+    <view class="userinfo" >
+
+    <button class="right"  wx:if="{{!status}}" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权</button>
+    
+        <view wx:if="{{status}}">
+        <image class="userinfo-avatar" src="{{avatarUrl}}" ></image>
+        <view class="userinfo-nickname">{{nickName}}</view>
+        </view>
+    </view>
+</view>
+<view wx:if="{{root}}">
+    <button bindtap="toBackManage">后台入口</button>
+</view>
+
+<!--<view class="tabs">-->
+<!--    <view class="row-1">-->
+<!--        <view class="tab-item">-->
+<!--            <image class="item-img" src="../../images/mine-img/record.png" bindtap="toRecord"></image>-->
+<!--            <view>鉴定记录</view>-->
+<!--        </view>-->
+<!--        <view class="tab-item">-->
+<!--            <image class="item-img" src="../../images/mine-img/service.png" bindtap="toService"></image>-->
+<!--            <view>联系客服</view>-->
+<!--        </view>-->
+<!--    </view>-->
+<!--    <view class="row-2">-->
+<!--        <view class="tab-item">-->
+<!--            <image class="item-img" src="../../images/mine-img/personal-info.png" bindtap="toPersonal"></image>-->
+<!--            <view>个人信息</view>-->
+<!--        </view>-->
+<!--        <view class="tab-item">-->
+<!--            <image class="item-img" src="../../images/mine-img/about.png" bindtap="toAbout"></image>-->
+<!--            <view>关于我们</view>-->
+<!--        </view>-->
+<!--    </view>-->
+<!--</view>-->
+
+<view class="tabs">
+    <view class="tab-item" bindtap="toPersonal">
+        <!-- <image class="item-img" src="../../images/mine-img/personal-info.png" bindtap="toPersonal"></image> -->
+        <view>个人信息</view>
+        <image src="../../images/mine-img/right_arrow.png" class="right_arrow"></image>
+    </view>
+
+
+    <view class="tab-item" bindtap="toRecord">
+        <!-- <image class="item-img" src="../../images/mine-img/record.png" bindtap="toRecord"></image> -->
+        <view>鉴定记录</view>
+        <image src="../../images/mine-img/right_arrow.png" class="right_arrow"></image>
+    </view>
+    <view class="tab-item" bindtap="toService">
+        <!-- <image class="item-img" src="../../images/mine-img/service.png" bindtap="toService"></image> -->
+        <view>联系客服</view>
+        <image src="../../images/mine-img/right_arrow.png" class="right_arrow"></image>
+    </view>
+    <view class="tab-item" bindtap="toAbout">
+        <!-- <image class="item-img" src="../../images/mine-img/about.png" bindtap="toAbout"></image> -->
+        <view>关于</view>
+        <image src="../../images/mine-img/right_arrow.png" class="right_arrow"></image>
+    </view>
+</view>

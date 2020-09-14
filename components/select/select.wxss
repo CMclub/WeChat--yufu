@@ -5,8 +5,7 @@
     padding-top: 2%;
 }
 .com-sContent{
-    border: 1px solid #e2e2e2;
-    background: white;
+    border: 1px solid #ececec;
     font-size: 16px;
     position: relative;
     height: 30px;
@@ -24,19 +23,21 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    padding:0 20px 0 6px;
+    padding:0 20rpx 0 30rpx;
     font-size: 14px;
+    color: #aaaaaa;
 }
 .com-sList{
-    background: white;
+    background: #f4f4f4;
     width: inherit;
     position: absolute;
-    border: 1px solid #e2e2e2;
+    border: 1px solid #f3f3f3;
     border-top: none;
     box-sizing: border-box;
     z-index: 3;
     max-height: 120px;
     overflow: auto;
+    padding: 0 20rpx 0 20rpx;
 }
 .com-sItem{
     height: 30px;

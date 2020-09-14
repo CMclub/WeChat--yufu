@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "indexBar": "../indexBar/indexBar",
+    "mineBar": "../mineBar/mineBar",
+    "minebar": "../indexBar/indexBar",
+    "onlookerBar": "../onlookerBar/onlookerBar"
+  }
+}
