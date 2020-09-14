@@ -1,0 +1,24 @@
+/* pages/backup/backup.wxss */
+.container{
+  display: flex;
+  flex-flow: wrap;
+}
+
+.footer{
+  text-align: center;
+}
+
+.items{
+  width: auto;
+  height: auto;
+  margin-top: 5%;
+  margin-left: 7%;
+}
+
+.img-item{
+  display: flex;
+  width: 300rpx;
+  height: 280rpx;
+  border-radius: 15px;
+  background: rgb(234, 237, 236);
+}

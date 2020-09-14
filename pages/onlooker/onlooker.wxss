@@ -1,1 +1,1 @@
-/* pages/onlooker/appraisal.wxss */
+@import "../record/record.wxss";

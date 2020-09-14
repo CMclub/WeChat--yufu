@@ -1,0 +1,92 @@
+/* pages/backEval/backEval.wxss */
+@import "../record/record.wxss";
+
+.container-eval{
+    display: flex;
+    flex-flow: wrap;
+    padding-bottom: 20rpx;
+}
+.user{
+    padding-bottom: 60rpx;
+    margin: 50rpx;
+}
+
+
+.state{
+    width: 100%;
+    height: 100rpx;
+    background-color: #f0f0f0;
+}
+
+.state-title{
+    color: #fe5555;
+    padding-left: 50rpx;
+    padding-top: 25rpx;
+}
+
+.adjust{
+    margin-bottom: 80rpx;
+    margin: 50rpx;
+}
+
+.text-name{
+    padding: 30rpx;
+    background-color: #ffffff;
+    width: auto;
+    height: 100rpx;
+  }
+
+.text{
+    word-break:break-all;
+}
+
+.line{
+    margin: 0 auto;
+    height: 1px;
+    margin-left: 6px;
+    margin-right: 10px;
+    background-color: #D8D8D8;
+}
+
+.eval-result{
+    border-radius: 10px;
+    margin-top: 3%;
+    background-color: #ffffff;
+    width: 100%;
+    height: 500rpx;
+}
+
+.com-opt{
+    margin: 30rpx auto;
+    width: 90%;
+    height: 430rpx;
+    background-color: #ffffff;
+}
+
+
+.description{
+    box-sizing: border-box;
+  }
+
+  .context{
+    padding: 30rpx;
+    background-color: #ffffff;
+    width: auto;
+    height: 300rpx;
+  }
+  
+  textarea::-moz-placeholder{
+    font-size: 16px;
+    color: #aaaaaa;
+  }
+  
+  .limitNum{
+    position:absolute;
+    right: 10px;
+    bottom:0px;
+    color: #888;
+  }
+
+  .btn{
+    margin-top: 10rpx;
+  }

@@ -1,0 +1,17 @@
+/* pages/service/service.wxss */
+@import "../record/record.wxss";
+.img-items{
+  display: flex;
+  width: 300rpx;
+  height: 280rpx;
+  border-radius: 10px;
+  background: rgb(234, 237, 236);
+  margin: 0 auto;
+}
+
+.text{
+  font-family:"Times New Roman";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

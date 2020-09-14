@@ -1,0 +1,38 @@
+/* pages/personalInfo/personalInfo.wxss */
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.userinfo-avatar {
+    width: 168rpx;
+    height: 168rpx;
+    margin: 20rpx;
+    border-radius: 20px;
+}
+
+.user{
+    margin-top: 30%;
+    margin-left: 10%;
+}
+.info-item{
+    margin-bottom: 12%;
+}
+
+.info-input{
+    /*height: 70rpx;*/
+    margin-top: 5%;
+    width: 88%;
+    border-bottom: 2px solid gray;
+}
+
+.submit{
+    margin-top: 30%;
+}
+
+.sub-btn{
+    border-radius: 20px;
+    width: 80%;
+    margin-bottom: 60rpx;
+}

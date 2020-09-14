@@ -1,0 +1,29 @@
+<!--pages/backup/backup.wxml-->
+<!-- <text>pages/backup/backup.wxml</text>
+<button bindtap="expertGet">get</button>
+<button bindtap="expertEval">eval</button>
+<button bindtap="downLoad">download</button> -->
+<!-- 设置为!root使得专家和管理员区别开 -->
+<view class="container" wx:if="{{!root}}">
+	<text>专家区域</text>
+	<view class="container">
+			<view class="items" wx:for="{{urls}}" data-item="{{item}}" bindtap="toInfo">
+				<image class="img-item" src="{{item.url}}" lazy-load='true'></image>
+				<view class="footer">{{item.nickName}}</view>
+			</view>
+	</view>
+</view>
+
+<view wx:if="{{root}}">
+	<text>管理员区域</text>
+	<text class="title">类别:</text>
+  <input bindblur="getKind"></input>
+	<text class="title">专家:</text>
+  <input bindblur="getExpert"></input>
+	<text class="title">费用:</text>
+  <input bindblur="getPrice"></input>
+	<text class="title">openid:</text>
+  <input bindblur="getOpenid"></input>
+	<button bindtap="expertOp">增加</button>
+	<button bindtap="getOperate">删除</button>
+</view>

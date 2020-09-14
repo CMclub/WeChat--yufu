@@ -1,0 +1,25 @@
+
+<view class="container">
+
+    <view class="items" wx:for="{{item.url}}" wx:for-item="url">
+            <image class="img-item"  data-index="{{index}}" bindtap="showPicture" src="{{url}}" lazy-load></image>
+    </view>
+
+
+
+</view>
+
+    <view class="adjust">
+		<view class="eval-item">鉴定单号: {{item.id}}</view>
+		<view class="line"></view>
+	</view>
+
+    <view class="adjust">
+		<view class="item">鉴定专家: {{item.eval_person}}</view>
+		<view class="line"></view>
+	</view>
+
+	<view class="adjust">
+		<view class="item">藏品器型: {{item.kind}}</view>
+		<view class="line"></view>
+	</view>

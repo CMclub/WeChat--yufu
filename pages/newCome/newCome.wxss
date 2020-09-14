@@ -1,0 +1,51 @@
+
+.head{
+  margin-top: 100rpx;
+  text-align: center;
+  justify-content: center;
+}
+
+.title_pic{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+}
+
+.title{
+  margin-top: 50rpx;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.title text{
+  font-size: 40rpx;
+}
+
+.tip{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50rpx;
+}
+
+.context{
+  display: flex;
+  width: 90%;
+  margin: auto;
+  color: #a8a8a8;
+  font-size:32rpx;
+}
+
+.auth_btn{
+  width: 65%;
+  border-radius: 20px;
+  margin-top: 100rpx;
+}
+
+.update_tip{
+  margin-top: 50rpx;
+  text-align: center;
+  font-weight: bolder;
+  color: red;
+  font-size: 30rpx;
+}

@@ -1,0 +1,66 @@
+<!--pages/record/record.wxml-->
+<tabs tabs="{{tabs}}" binditemChange="handleItemChange">
+	<!-- <block wx:if="{{tabs[0].isActive}}">
+        <view class="container">
+            <view class="items" wx:for="{{collections}}" wx:key="{{item.id}}"
+                  data-isPass="{{item.is_pass}}" data-item="{{item}}" bindtap="toInfo"
+            >
+                <image class="img-item"  src="{{item.url}}">
+                </image>
+                <view class="footer">{{item.is_pass}}</view>
+            </view>
+        </view>
+    </block> -->
+
+	<block wx:if="{{tabs[0].isActive}}">
+		<view class="container">
+			<view class="items" wx:for="{{infoList}}" data-item="{{item}}" bindtap="toInfo">
+				<image class="img-item" src="{{item.url}}"></image>
+				<view class="footer">{{item.is_pass===2?item.eval_result:item.status}}</view>
+				
+			</view>
+		</view>
+	</block>
+
+
+
+	<block wx:elif="{{tabs[1].isActive}}">
+		<view class="container">
+			<view class="items" wx:for="{{infoList}}" data-item="{{item}}" bindtap="toInfo">
+				<image class="img-item" src="{{item.url}}"></image>
+				<view class="footer">待鉴定</view>
+			</view>
+		</view>
+	</block>
+
+
+	<block wx:elif="{{tabs[2].isActive}}">
+		<view class="container">
+			<view class="items" wx:for="{{infoList}}" data-item="{{item}}" bindtap="toInfo">
+				<image class="img-item" src="{{item.url}}"></image>
+				<view class="footer">{{item.eval_result}}</view>
+			</view>
+		</view>
+	</block>
+
+	<block wx:elif="{{tabs[3].isActive}}">
+		<view class="container">
+			<view class="items" wx:for="{{infoList}}" data-item="{{item}}" bindtap="toInfo">
+				<image class="img-item" src="{{item.url}}"></image>
+				<view class="footer">已退回</view>
+			</view>
+		</view>
+	</block>
+
+	<block wx:else>
+		<view class="container">
+			<view class="items" wx:for="{{infoList}}" data-item="{{item}}" bindtap="toInfo">
+				<image class="img-item" src="{{item.url}}"></image>
+				<view class="footer">已超时</view>
+			</view>
+		</view>
+	</block>
+
+	<view class="empty"></view>
+
+</tabs>

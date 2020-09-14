@@ -1,0 +1,23 @@
+<!--pages/temp/temp.wxml-->
+
+
+<view class="head">
+    <image class="title_pic" src="../../images/index-img/index.png"></image>
+</view>
+
+<view class="title">
+    <text>予复在线鉴定</text>
+</view>
+<popup
+        id='popup'
+        title='予复公众号在线鉴定用户协议'
+        content='{{context}}'
+        btn_ok='我已了解'
+        binderror="_error"
+        bindsuccess="_success"
+></popup>
+<view class="tip">
+    <view class="context">您暂未获取微信授权,将无法正常使用小程序的功能,如果需要正常使用,请点击"授权登录"按钮打开头像昵称等信息的授权。</view>
+</view>
+<button wx:if="{{canIUse}}" class="auth_btn" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录</button>
+<view wx:else class="update_tip">请升级微信版本</view>

@@ -1,24 +1,45 @@
-<!--appraisal.wxml-->
+<official-account></official-account>
 <view class="container">
-    <swiper class='img_swiper' indicator-dots='true' autoplay='true' interval='4000' duration='1000' circular='true'>
+    <swiper class='img_swiper' indicator-dots='true' autoplay='true' interval='4000' duration='1000' circular='true' style="height: {{imgHei}}">
         <block wx:for="{{switer_icons}}" wx:key="url">
             <swiper-item>
-                <image src='{{item.url}}' class='img-item' mode='aspectFill'></image>
+                <image src='{{item.url}}' class='img-item' mode='widthFix' bindload='setHei'></image>
             </swiper-item>
         </block>
     </swiper>
 
-    <view>
+    <view class="content">
         <text class="text-title">
-            介绍
+            鉴定须知
         </text>
         <text>
-            青花瓷是用含氧化钴的钴矿为原料，在陶瓷坯体上描绘纹饰，再罩上一层透明釉，经高温还原焰一次烧成。钴料烧成后呈蓝色，具有着色力强、发色鲜艳、烧成率高、呈色稳定的特点。原始青花瓷于唐宋已见端倪，成熟的青花瓷则出现在元代景德镇的湖田窑。明代青花成为瓷器的主流。
+            1、用手机在自然光下拍6到9张图片，包括正面，侧面，底足，口沿和细节
+            2、鉴定只针对明清瓷器，海外回流为主，拒绝国宝
+            3、【重要提示】图片鉴定存在误差，鉴定结果以实物上手为准，所有鉴定意见仅供各位藏友交流学习之用，不作为实际交易和买卖价格的依据，藏友若擅自将鉴定结果作为实际交易的依据，后果自负，与平台无关。
         </text>
+
+       <popup wx:if="{{read}}"
+               id='popup'
+               title='予复公众号在线鉴定用户协议'
+               content='{{context}}'
+               is_read="{{read}}"
+               btn_ok='我已了解'
+               bindok="_ok"
+        ></popup>
+
+        <view class="choose">
+            <label>
+                <radio checked='{{check}}'  bindtap='radiocon'/>
+            </label>
+        
+            <text class="deal">我已阅读并同意</text>
+            <text bindtap='isread' style="color:deepskyblue">用户协议</text>
+        </view>
+
         <view class="btn">
-            <button class="main-btn" bindtap="toAppraisal" >开始鉴赏</button>
+            <button class="main-btn" disabled="{{!check}}" wx:if="{{status}}" type="primary" bindtap="toAppraisal">开始鉴赏</button>
+            <button class="main-btn" disabled="{{!check}}" wx:if="{{!status}}" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">开始鉴赏</button>
         </view>
     </view>
-
 
 </view>

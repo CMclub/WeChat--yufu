@@ -1,0 +1,54 @@
+<!--pages/backEval/backEval.wxml-->
+<view>
+    <view class="adjust">用户藏品图片:</view>
+    <view class="container-eval">
+
+        <view class="items" wx:for="{{item}}">
+            <image class="img-item"  data-index="{{index}}" bindtap="showPicture" src="{{item.url}}" lazy-load='true'></image>
+        </view>
+  </view>
+
+    <view class="user">
+      <text class="title">收藏人描述:</text>
+      <text class="text">{{item[0].text}}</text>
+      <view class="line"></view>
+    </view>
+
+
+    <view class="eval adjust">
+      <text class="title">藏品名称:</text>
+      <!-- <input class="text" bindblur="getName"></input> -->
+      <textarea class="text-name"  maxlength="80"   bindblur="getName">
+      </textarea>
+      <view class="line"></view>
+    </view>
+
+  <view class="com-opt">
+    <select propArray='{{kind}}' nowText='{{eval_kind}}' bind:getIndex="getKind"></select>
+    <select prop-array='{{age}}' nowText="{{eval_age}}" bind:getIndex="getAge"></select>
+    <select prop-array='{{result}}' nowText="{{eval_result}}" bind:getIndex="getResult"></select>
+  </view>
+
+    
+
+  <view class="eval adjust">
+    <view class="description">
+      <text>专家意见：</text>
+      <textarea class="context" placeholder="请留下您的意见..." maxlength="2000"   bindinput="countText" bindblur="getIdea">
+        <text class="limitNum">{{limitNum|0}}</text>
+      </textarea>
+    </view>
+  </view>
+<text >{{time}}</text>
+<button bindtap="start" class='btn'>开始录音</button>
+<button bindtap="pause" class='btn'>暂停录音</button>
+<button bindtap="stop" class='btn'>停止录音</button>
+<button bindtap="play" class='btn'>播放录音</button>
+<button bindtap="upload" class='btn'>上传录音</button>
+
+
+    <button bindtap="expertEval">提交</button>
+    <button bindtap="getStatus">退回</button>
+
+
+</view>

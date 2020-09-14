@@ -1,4 +1,8 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "免费鉴定"
+  "usingComponents": {
+    "tabBar": "../../components/tabBar/tabBar",
+    "popup":"../../components/popup/popup"
+  },
+  "enablePullDownRefresh": true,
+  "withShareTicket":true
 }

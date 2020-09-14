@@ -1,2 +1,19 @@
-<!--pages/onlooker/appraisal.wxml-->
-<text>pages/onlooker/index.wxml</text>
+<view class="container" >  
+
+    <!-- <view class="items" wx:if="{{re}}" wx:for="{{infoList}}" wx:key="" data-item="{{item}}" bindtap="toInfo">
+        <image class="img-item" src="{{item.url}}" bindload="imageLoad" lazy-load bindload='onLazyLoad'></image>
+        <view class="footer">{{item.eval_name}}</view>
+    </view> -->
+
+    <view class="items" wx:for="{{infoList}}" wx:key="" data-item="{{item}}" bindtap="toInfo">
+        <image class="img-item" src="{{item.url}}" bindload="imageLoad" lazy-load bindload='onLazyLoad'></image>
+        <view wx:if="{{item.eval_name.length>10}}" class="footer-long">{{item.eval_name}}</view>
+        <view class="footer" wx:if="{{item.eval_name.length<10}}">{{item.eval_name}}</view>
+    </view>
+
+     <!-- <view class="items" wx:if="{{more}}" wx:for="{{infoList}}" wx:key="" data-item="{{item}}" bindtap="toInfo">
+        <image class="img-item" src="{{item.url}}" bindload="imageLoad" lazy-load bindload='onLazyLoad'></image>
+        <view class="footer">{{item.eval_name}}</view>
+    </view> -->
+
+</view>

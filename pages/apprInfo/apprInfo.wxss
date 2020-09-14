@@ -1,0 +1,68 @@
+/* pages/apprInfo/apprInfo.wxss */
+
+@import "../record/record.wxss";
+
+.state{
+    width: 100%;
+    height: 100rpx;
+    background-color: #f0f0f0;
+}
+
+.state-title{
+    color: #fe5555;
+    padding-left: 50rpx;
+    padding-top: 25rpx;
+}
+
+.adjust{
+    padding-left: 50rpx;
+    margin-bottom: 70rpx;
+}
+
+.text{
+    word-break:break-all;
+}
+
+.line{
+    margin: 0 auto;
+    height: 1px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #D8D8D8;
+}
+
+.eval-result{
+    border-radius: 10px;
+    margin-top: 3%;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.topic_answerImg{
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+  }
+  .topic_answer_itemImg{
+    width: 210rpx;
+    height: 210rpx;
+    margin-right: 30rpx;
+    margin-bottom: 30rpx;
+  }
+  .topic_answer_itemImg:nth-of-type(3n){
+    margin-right: 0;
+  }
+
+  .container-img{
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    padding-bottom: 100rpx;
+}
+
+  .img{
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 75rem;
+  }

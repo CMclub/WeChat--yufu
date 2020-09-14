@@ -1,0 +1,8 @@
+{
+
+  "navigationStyle":"custom",
+  "usingComponents": {
+    "popup": "../../components/popup/popup"
+  },
+  "tabBar": {}
+}

@@ -1,0 +1,88 @@
+<!--pages/apprInfo/apprInfo.wxml-->
+<view wx:if="{{status}}">
+
+	<view class="adjust">藏品图片:</view>
+    <view class="container">
+        <view class="items" wx:for="{{item.url}}" wx:for-item="url">
+        <image class="img-item" data-index="{{index}}" bindload="getLocal" bindtap="showPicture" src="{{url}}" lazy-load='true'></image>
+        </view>
+	</view>
+
+	<view class=" eval adjust">
+		<view class="text">鉴定单号: {{item.id}}</view>
+		<view class="line"></view>
+	</view>
+
+	<view class=" eval adjust">
+		<view class="text">鉴定专家: {{item.eval_person}}</view>
+		<view class="line"></view>
+	</view>
+
+	<view class="eval adjust">
+		<view class="text">藏品名称: {{item.eval_name}}</view>
+		<view class="line"></view>
+	</view>
+
+		<view class="eval adjust">
+		<view class="text">藏品器型: {{item.eval_kind}}</view>
+		<view class="line"></view>
+	</view>
+
+	<view class="eval adjust">
+		<view class="text">藏品断代: {{item.eval_age}}</view>
+		<view class="line"></view>
+	</view>
+
+		<view class="eval adjust">
+		<view class="text">鉴定结果: {{item.eval_result}}</view>
+		<view class="line"></view>
+	</view>
+
+	<view class="eval adjust" wx:if="{{!audio}}">
+		<view class="text" >专家意见: {{item.eval_idea}}</view>
+		<view class="line"></view>
+	</view>
+
+	<view class="eval adjust" wx:if="{{audio}}">专家意见: </view>
+	<view class="container-img" wx:if="{{audio}}">
+	<audio  src="{{item.eval_audio}}" id="myAudio" bindended="end"></audio>
+	<image class="img" wx:if="{{!play}}"  src="../../images/index-img/play.png" bindtap="audioPlay"></image>
+	<image class="img" wx:if="{{play}}"  src="../../images/index-img/puse.png" bindtap="audioPause"></image>
+	</view>
+
+	<!-- <audio  src="{{item.eval_audio}}" id="myAudio" ></audio>
+	<button  bindtap="audioPlay">播放专家意见</button>
+	<button type="primary" bindtap="audioPause">暂停</button>
+	<button type="primary" bindtap="audio14">设置当前播放时间为14秒</button>
+	<button type="primary" bindtap="audioStart">回到开头</button> -->
+	
+
+</view>
+
+<!-- 未鉴定,已退回，已超时 -->
+<view wx:if="{{!status}}">
+
+	<view class="state">
+		<view class="state-title">该藏品{{is_pass}}</view>
+	</view>
+
+	<view class="adjust">我的藏品图片:</view>
+    <view class="container">
+        <view class="items" wx:for="{{item.url}}" wx:for-item="url">
+        <image class="img-item" data-index="{{index}}" bindload="getLocal" bindtap="showPicture" src="{{url}}" lazy-load='true'></image>
+        </view>
+		</view>
+
+
+	<view class="eval adjust">
+		<view class="text">我的描述: {{item.text}}</view>
+		<view class="line"></view>
+	</view>
+
+	<view class=" eval adjust">
+		<view class="text">鉴定单号: {{item.id}}</view>
+		<view class="line"></view>
+	</view>
+	<view class="empty"></view>
+
+</view>

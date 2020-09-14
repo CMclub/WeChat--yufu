@@ -1,0 +1,17 @@
+<!--pages/service/service.wxml-->
+<text>请点击二维码并长按保存在微信中识别添加客服</text>
+
+<!-- <view class="container"> -->
+			<!-- <view class="items" wx:for="{{infoList}}" data-item="{{item}}" >
+        <image class="img-item" bindtap='showImg' data-index="{{index}}" src='{{item.url}}'></image>
+                <view class="footer">{{item.text}}</view>
+			</view> -->
+
+
+        <view class="items" wx:for="{{infoList}}" data-item="{{item}}">
+            <image class="img-items"  data-index="{{index}}" bindtap="showPicture" src="{{item.url}}"></image>
+            <view class="text">{{item.text}}</view>
+	<!-- <view class="footer">{{item.text}}</view> -->
+        </view>
+
+	<!-- </view> -->

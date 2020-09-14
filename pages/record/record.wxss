@@ -1,0 +1,58 @@
+.container{
+    display: flex;
+    flex-flow: wrap;
+    padding-bottom: 100rpx;
+}
+
+.footer{
+    width: 300rpx;
+    height: 50rpx;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-top: -50rpx;
+    position: relative;
+    z-index: 1;
+    color: #FFFFFF;
+    font-size: 25rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:0 0 10rpx 10rpx ;
+    overflow:hidden;  /*超出隐藏*/
+    white-space:nowrap;  /*溢出不换行*/
+    text-overflow:ellipsis;  /*溢出显示用省略号*/
+}
+
+.footer-long{
+    width: 300rpx;
+    height: 50rpx;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-top: -50rpx;
+    position: relative;
+    z-index: 1;
+    color: #FFFFFF;
+    font-size: 25rpx;
+
+    overflow:hidden;  /*超出隐藏*/
+    white-space:nowrap;  /*溢出不换行*/
+    text-overflow:ellipsis;  /*溢出显示用省略号*/
+}
+
+.items{
+    width: auto;
+    height: auto;
+    margin-top: 5%;
+    margin-left: 7%;
+}
+
+.img-item{
+    display: flex;
+    width: 300rpx;
+    height: 280rpx;
+    border-radius: 10px;
+    background: rgb(234, 237, 236);
+}
+
+.empty{
+    width: 100%;
+    height: 50rpx;
+}
