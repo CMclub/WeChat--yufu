@@ -23,9 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'cc^lg$v*)75k4#-m)l_7kfu1$cvv@l-y5&rso$&yl_fth0vqdc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['www.shoolos.cn']
+ALLOWED_HOSTS = ['www.yufuculture.com']
+
+#106.53.225.116
 
 
 # Application definition
@@ -38,9 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapi',
-    'werkzeug_debugger_runserver',
+    #'werkzeug_debugger_runserver',
     'django_extensions',
+    'sslserver'
 ]
+
+SECURE_SSL_REDIRECT = False
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -82,12 +87,30 @@ DATABASES = {
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'test1',
-        'USER': 'axdv1531',
-        'PASSWORD': 'aXdV1531',
-        'HOST': 'rm-8vbe1ibe0529bnh73go.mysql.zhangbei.rds.aliyuncs.com',
+        'USER': 'root',
+        'PASSWORD': 'axdv1531',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
+        'OPTIONS': {
+            "init_command": "SET default_storage_engine='INNODB'"
+        },
+        "ATOMIC_REQUESTS": True, #全局开启事务，绑定的是http请求响应整个过程
+        #"AUTOCOMMIT":False, #全局取消自动提交，慎用
     }
 }
+#'ENGINE': 'django.db.backends.mysql',
+       # 'NAME': 'test1',
+        #'USER': 'root',
+        #'PASSWORD': 'axdv1531',
+       # 'HOST': '127.0.0.1',
+       # 'PORT': '3306',
+
+#'ENGINE': 'django.db.backends.mysql',
+        #'NAME': 'test1',
+        #'USER': 'axdv1531',
+        #'PASSWORD': 'aXdV1531',
+        #'HOST': 'rm-8vbe1ibe0529bnh73go.mysql.zhangbei.rds.aliyuncs.com',
+        #'PORT': '3306',
 
 
 # Password validation
@@ -127,4 +150,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'image')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'image')

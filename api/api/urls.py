@@ -16,17 +16,33 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from myapi.views import user, submit, download, mycookie, detail, show, show_detail, sort
+from myapi.views import user, hot, submit, list, search, like, preview_d, collection, collections, mycookie, detail, show, show_detail, sort, admin_sort, admin_eval, admin_give_eval, service, userinfo, userinfoget, count, expert, cancel, audio
 from django.views.static import serve
 from django.conf import settings
 urlpatterns = [
     path('api/user/', user),
     path('api/submit/', submit),
-    path('api/download/', download),
     path('api/eval/', mycookie),
     path('api/detail/', detail),
     path('api/show/', show),
     path('api/show_detail/', show_detail),
     path('api/sort/', sort),
-    url(r'api/image/(?P<path>.*)',serve,{'document_root':settings.MEDIA_ROOT}),
+    path('api/admin/sort/', admin_sort),
+    path('api/admin/eval/', admin_eval),
+    path('api/admin/give_eval/', admin_give_eval),
+    path('api/service/', service),
+    path('api/userInfo/', userinfo),
+    path('api/userInfoGet/', userinfoget),
+    path('api/count/', count),
+    path('api/admin/expert/', expert),
+    path('api/cancel/', cancel),
+    path('api/audio/', audio),
+    path('api/preview/', preview_d),
+    path('api/collections/', collections),
+    path('api/collection/', collection),
+    path('api/like/', like),
+    path('api/search/', search),
+    path('api/list/', list),
+    path('api/hot/', hot),
+    #url(r'api/image/(?P<path>.*)', serve, {'document_root':settings.MEDIA_ROOT}),
 ]
